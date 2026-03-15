@@ -1,15 +1,15 @@
 ---
 whiskers:
-    version: 2.5.0
-    matrix:
-        - accent
-        - flavor
-    filename: "themes/{{ flavor.identifier }}/catppuccin-{{ flavor.identifier }}-{{ accent }}.json"
+  version: "^2.5.0"
+  matrix:
+    - accent
+    - flavor
+  filename: "themes/{{ flavor.identifier }}/catppuccin-{{ flavor.identifier }}-{{ accent }}.json"
 ---
 {%- set palette = flavor.colors -%}
 {
-  "palette:catppuccin{{ flavor.name }}{{ accent | capitalize }}:1725866092314": {
-    "name": "Catppuccin {{ flavor.name }} {{ accent | capitalize }}",
+  "palette:catppuccin{{ flavor.name }}{{ palette[accent].name }}:1725866092314": {
+    "name": "Catppuccin {{ flavor.name }} {{ palette[accent].name }}",
     "black": "{{ text.rgb.r }},{{ text.rgb.g }},{{ text.rgb.b }}",
     "white": "{{ mantle.rgb.r }},{{ mantle.rgb.g }},{{ mantle.rgb.b }}",
     "white-on-dark": "{{ subtext0.rgb.r }},{{ subtext0.rgb.g }},{{ subtext0.rgb.b }}",
